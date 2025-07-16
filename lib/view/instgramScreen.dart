@@ -15,6 +15,24 @@ class InstaScreen extends StatelessWidget {
     {"image": "assets/images/img_3.png", "name": "Duan"},
     {"image": "assets/images/img_4.png", "name": "Aya"},
   ];
+  List<Map<String, String>> Posts = [
+    {
+      "image": "assets/images/img_1.png",
+      "name": "ryno0227",
+      "song": "A Girl Like You",
+    },
+    {
+      "image": "assets/images/img_2.png",
+      "name": "johnbcrist",
+      "song": "Beautiful Things",
+    },
+    {
+      "image": "assets/images/img_3.png",
+      "name": "Duan",
+      "song": "Birds of a Feather",
+    },
+    {"image": "assets/images/img_4.png", "name": "Aya", "song": "Monaco"},
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -116,6 +134,62 @@ class InstaScreen extends StatelessWidget {
                       ),
                   ],
                 ),
+              ),
+            ),
+            Expanded(
+              child: PageView.builder(
+                physics: BouncingScrollPhysics(),
+                scrollDirection: Axis.vertical,
+                itemCount: Posts.length,
+                itemBuilder: (context, i) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(Posts[i]['image']!),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 10),
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage: AssetImage(Posts[i]['image']!),
+                              ),
+                              SizedBox(width: 15),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      Posts[i]['name']!,
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text(
+                                      Posts[i]['song']!,
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.more_horiz,
+                                  color: Colors.white,
+                                  size: 30,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
             ),
           ],
