@@ -119,7 +119,10 @@ class _LoginscreenState extends State<Loginscreen> {
                       decoration: InputDecoration(
                         labelText: "Username",
                         hintText: "Enter your username",
-                        prefixIcon: const Icon(Icons.person),
+                        prefixIcon: Icon(
+                          Icons.person,
+                          color: ConstantColors.primaryColor,
+                        ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
                             color: Colors.black45,
@@ -170,12 +173,16 @@ class _LoginscreenState extends State<Loginscreen> {
                       decoration: InputDecoration(
                         labelText: "Password",
                         hintText: "Enter your password",
-                        prefixIcon: const Icon(Icons.lock),
+                        prefixIcon: Icon(
+                          Icons.lock,
+                          color: ConstantColors.primaryColor,
+                        ),
                         suffixIcon: IconButton(
                           icon: Icon(
                             obscurePassword
                                 ? Icons.visibility_off
                                 : Icons.visibility,
+                            color: ConstantColors.primaryColor,
                           ),
                           onPressed: () {
                             setState(() => obscurePassword = !obscurePassword);

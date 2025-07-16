@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_poject3/view/LoginScreen.dart';
 import 'package:mini_poject3/view/instgramScreen.dart';
 
 void main() {
@@ -10,6 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: InstaScreen());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Loginscreen());
   }
 }
